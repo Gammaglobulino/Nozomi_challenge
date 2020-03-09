@@ -17,6 +17,14 @@ func TestAppearingMoreThanTwiceChars(t *testing.T) {
 
 }
 
+func TestInputEmptyString(t *testing.T) {
+	testString := ""
+	resultString, err := Nozomi_challenge.AppearingMoreThanTwiceChars(testString, true)
+	assert.NotNil(t, err, err.Error())
+	assert.EqualValues(t, "", resultString)
+
+}
+
 func TestSpaceIncludedAsChar(t *testing.T) {
 	testString := "My name is Earl babe"
 
