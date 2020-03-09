@@ -5,27 +5,28 @@ import (
 	"strings"
 )
 
-func main(){
+func main() {
 
 }
 
 // return a string containing more than twice occurrence of a char
 // we can flag to not consider space as char
+// countSpace : true, <space> considered as rune and included on the results strings
 
-func AppearingMoreThanTwiceChars(s string,countSpace bool) (string,error){
-	if s ==""{
+func AppearingMoreThanTwiceChars(s string, countSpace bool) (string, error) {
+	if s == "" {
 		return "", fmt.Errorf("String is empty")
 	}
-	s=strings.ToLower(s)
-	tempMap:=make(map[int32]int,len(s))
+	s = strings.ToLower(s)
+	tempMap := make(map[int32]int, len(s))
 	var resultString string
-	for _,ch:=range s{
-		if string(ch) ==" " && countSpace !=true{
+	for _, ch := range s {
+		if string(ch) == " " && countSpace != true {
 			continue
 		}
-		if tempMap[ch]++;tempMap[ch] ==2{
-			resultString = resultString+string(ch)
+		if tempMap[ch]++; tempMap[ch] == 2 {
+			resultString = resultString + string(ch)
 		}
 	}
-	return resultString,nil
+	return resultString, nil
 }
