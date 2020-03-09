@@ -7,32 +7,32 @@ import (
 )
 
 func TestAppearingMoreThanTwiceChars(t *testing.T) {
-	testString:="MynameisEarlbabe"
+	testString := "MynameisEarlbabe"
 
-	resultString,err:=Nozomi_challenge.AppearingMoreThanTwiceChars(testString,true)
-	if err!=nil{
+	resultString, err := Nozomi_challenge.AppearingMoreThanTwiceChars(testString, true)
+	if err != nil {
 		t.Fatal(err.Error())
 	}
-	assert.EqualValues(t,"meab",resultString)
+	assert.EqualValues(t, "meab", resultString)
 
 }
 
 func TestSpaceIncludedAsChar(t *testing.T) {
-	testString:="My name is Earl babe"
+	testString := "My name is Earl babe"
 
-	resultString,err:=Nozomi_challenge.AppearingMoreThanTwiceChars(testString,true)
-	if err!=nil{
+	resultString, err := Nozomi_challenge.AppearingMoreThanTwiceChars(testString, true)
+	if err != nil {
 		t.Fatal(err.Error())
 	}
-	assert.EqualValues(t,"m eab",resultString)
+	assert.EqualValues(t, "m eab", resultString)
 }
 
 func TestSpaceNotIncludedAsChar(t *testing.T) {
-	testString:="My name is Earl babe"
+	testString := "My name is Earl babe"
 
-	resultString,err:=Nozomi_challenge.AppearingMoreThanTwiceChars(testString,false)
-	if err!=nil{
+	resultString, err := Nozomi_challenge.AppearingMoreThanTwiceChars(testString, false)
+	if err != nil {
 		t.Fatal(err.Error())
 	}
-	assert.EqualValues(t,"meab",resultString)
+	assert.EqualValues(t, "meab", resultString)
 }
